@@ -80,3 +80,8 @@
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 	
 }
+.asc_img{
+	width:10px;
+	height:10px;
+	margin-left: 10px
+}

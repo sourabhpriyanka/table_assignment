@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TableHeader from './TableHeader';
 import TableRow from './TableRow';
 
+import asc from './asc.png'
 
 class Table extends React.Component {
     constructor(props) {
@@ -13,11 +14,17 @@ class Table extends React.Component {
             <div>
                 <table  id="students">
                     <tbody>
-					
-                        <TableHeader header={header} />
+					   <tr>
+							<th>Id</th>
+							<th>Name<img src={asc} onClick={() => this.props.sortBy('name') } className='asc_img'/></th>
+							<th>UserName<img src={asc} onClick={() => this.props.sortBy('username') } className='asc_img'/></th>
+							<th>Email<img src={asc} onClick={() => this.props.sortBy('email') } className='asc_img'/></th>
+						</tr>
+                        
+						
                         {this.props.data.map(function (d, i) {
                             return <TableRow key={'person-' + i}
-							    id={d.id}
+							    id={i+1}
                                 name={d.name}
                                 email={d.username}
                                 phone={d.email}
